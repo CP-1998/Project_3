@@ -1,3 +1,4 @@
 module.exports = {
-  // your models here...
+  User: require('./User'),
+  Post: require('./Post')
 }
