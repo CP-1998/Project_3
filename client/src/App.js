@@ -5,7 +5,7 @@ import PostAPI from './utils/PostAPI'
 import PostContext from './utils/PostContext'
 import Navbar from './components/Navbar'
 import Card from './components/Card'
-import User from './pages/User'
+import User from './pages/User/User'
 
 
 const {
