@@ -1,11 +1,11 @@
 import React from 'react'
-import { makeStyles } from '@material-ui/core/styles';
+import { useState } from 'react-router-dom'
 import Navbar from '../../components/Navbar'
 
-const User = () => {
+const userLogin = () => {
   return (
     <h1>Hello World!</h1>
   )
 }
 
-export default User 
+export default userLogin
