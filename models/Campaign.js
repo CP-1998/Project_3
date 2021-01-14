@@ -1,6 +1,6 @@
 const { model, Schema } = require('mongoose')
 
-const Post = new Schema({
+const Campaign = new Schema({
   title: {
     type: String,
     required: true
@@ -15,4 +15,4 @@ const Post = new Schema({
   }
 }, { timestamps: true })
 
-module.exports = model('Post', Post)
+module.exports = model('Campaign', Campaign)
