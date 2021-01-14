@@ -1,11 +1,11 @@
 const router = require('express').Router()
 const { User } = require('../models')
-const passport = require('passport')
-const jwt = require('jsonwebtoken')
+// const passport = require('passport')
+// const jwt = require('jsonwebtoken')
 
 router.post('/users/register', (req, res) => {
-  const { name, username, password } = req.body
-  User.register(new User({ name, username }), password, err => {
+  const { firstName, lastName, username, email, password } = req.body
+  User.register(new User({ firstName, lastName, username, password, email }), password, err => {
     if (err) { console.log(err) }
     res.sendStatus(200)
   })
@@ -19,7 +19,7 @@ router.post('/users/login', (req, res) => {
   })
 })
 
-router.get('/users/posts', passport.authenticate('jwt'), (req, res) => {
+router.get('/users', (req, res) => {
   res.json(req.user)
 })
 

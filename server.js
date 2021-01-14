@@ -24,12 +24,11 @@ passport.use(new JWTStrategy({
   jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
   secretOrKey: process.env.SECRET
 }, ({ id }, cb) => User.findById(id)
-  .populate('posts')
   .then(user => cb(null, user))
   .catch(err => cb(err))))
 
 app.use(require('./routes'))
 
 require('./db')
-  .then(() => app.listen(process.env.PORT || 3000))
+  .then(() => app.listen(process.env.PORT || 3001))
   .catch(err => console.log(err))

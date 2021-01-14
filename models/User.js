@@ -14,11 +14,16 @@ const User = new Schema({
     required: true,
     unique: true
   },
+  email: {
+    type: String,
+    required: true,
+    unique:true
+  },
   campaigns: [{
     type: Schema.Types.ObjectId,
     ref: 'campaigns'
   }],
-entries: [{
+  entries: [{
   type: Schema.Types.ObjectId,
   ref: 'entries'
 }]
