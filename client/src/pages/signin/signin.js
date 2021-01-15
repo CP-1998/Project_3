@@ -15,7 +15,7 @@ function App() {
         <br></br>
         <br></br>
         <br></br>
-        <TextField label="Enter your password" />
+        <TextField id="passwordHash" label="Password" type="password" autoComplete="current-password" />
         <br></br>
         <br></br>
         <br></br>

@@ -7,10 +7,10 @@ const SignUp = () => {
       <Box id="signInCard" color='primary'>
         <p>Sign Up</p>
         <hr></hr>
-        <TextField label="Enter your email" />
+        <TextField type="email" id="emailInput" label="Enter your email" />
         <br></br>
         <br></br>
-        <TextField label="Enter your password" />
+        <TextField id="passwordHash" label="Password" type="password" autoComplete="current-password" />
         <br></br>
         <br></br>
         <Link href="signin">Already have an account?</Link>
