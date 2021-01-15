@@ -11,7 +11,7 @@ function App() {
       <Box id="signInCard" color='primary'>
         <p>Sign In</p>
         <hr></hr>
-        <TextField label="Enter your username" />
+        <TextField label="Enter your email" />
         <br></br>
         <br></br>
         <br></br>
