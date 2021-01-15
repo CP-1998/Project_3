@@ -1,4 +1,4 @@
-import { useState} from 'react'
+import React, UseState from 'react'
 import Navbar from '../../components/Navbar'
 import simpleCard from '../../components/Card'
 
@@ -6,38 +6,77 @@ import simpleCard from '../../components/Card'
 
 const Home = () => {
 
-  const [campaignState, setCampaignState] = useState({
-    search: '',
-    campaign: []
-  })
+  const {
+    getCampaign,
+    createCampaign,
+    deleteCampaign
+  } = CampaignAPI
 
-  const handleInputChange = event => {
-    setCampaignState({ ...campaignState, [event.target.name]: event.target.value })
-  }
+  const App = () => {
+    const [itemState, setItemState] = useState({
+      campaign: '',
+      campaigns: []
+    })
 
-  const handleSearchCampaign = event => {
-    event.preventDefault()
-    getCampaign(campaignState.search)
-      .then(({ data: campaign }) => {
-        setCampaignState({ ...campaignState, campaign, search: '' })
+    campaignState.handleInputChange = event => {
+      setCampaignState({ ...campaignState, [event.target.name]: event.target.value })
+    }
+
+    campaignState.handleAddItem = event => {
+      event.preventDefault()
+      let campaigns = JSON.parse(JSON.stringify(campaignState.campaigns))
+      createCampaign({
+        text: campaignState.campaign,
+        isDone: false
       })
-      .catch(err => console.error(err))
-  }
+        .then(({ data: campaign }) => {
+          campaigns.push(campaign)
+          setCampaignState({ ...campaignState, campaigns, campaign: '' })
+        })
+        .catch(err => console.error(err))
+    }
 
-  const handleSaveMedia = imdbID => {
-    const newMedia = campaignState.campaign.filter(x => x.imdbID === imdbID)[0]
-    saveMedia(newMedia)
-      .then(() => {
-        let campaign = JSON.parse(JSON.stringify(campaignState.campaign))
-        campaign = campaign.filter(x => x.imdbID !== imdbID)
-        setCampaignState({ ...campaignState, campaign })
-      })
-  }
+    campaignState.handleDeleteItem = id => {
+      let campaigns = JSON.parse(JSON.stringify(campaignState.campaigns))
+      deleteCampaign(id)
+        .then(() => {
+          campaigns = campaigns.filter(campaign => campaign._id !== id)
+          setCampaignState({ ...campaignState, campaigns })
+        })
+        .catch(err => console.error(err))
+    }
+
+    useEffect(() => {
+      getCampaign()
+        .then(({ data: campaigns }) => {
+          setCampaignState({ ...campaignState, campaigns })
+        })
+    }, [])
 
   
-  return (
-    <h1>Hello World!</h1>
-  )
+    return (
+      <>
+        <hr />
+        <Typography variant="h6">
+          Your Dashboard
+      </Typography>
+        <Form
+          search={campaignState.search}
+          handleInputChange={handleInputChange}
+          handleSearchOMDB={handleSearchOMDB} />
+        {
+          campaignState.setCampaignState.length ?
+            campaignState.setCampaignState.map(setCampaignState => (
+              <setCampaignState
+                key={setCampaignState.}
+                setCampaignState={setCampaignState}
+                saved={false}
+                handleBtnClick={handleSavesetCampaignState} />
+            )) : null
+        }
+      </>
+    )
+  }
 }
 
 export default Home 
