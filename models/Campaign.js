@@ -5,14 +5,18 @@ const Campaign = new Schema({
     type: String,
     required: true
   },
-  body: {
+  description: {
     type: String,
     required: true
   },
-  user: {
+  value: {
+    type: Number,
+    require: true
+  },
+  user: [{
     type: Schema.Types.ObjectId,
     ref: 'User'
-  }
+  }]
 }, { timestamps: true })
 
 module.exports = model('Campaign', Campaign)

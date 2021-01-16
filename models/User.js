@@ -9,22 +9,24 @@ const User = new Schema({
     type: String,
     required: true
   },
-  username: {
-    type: String,
-    required: true,
-    unique: true
-  },
   email: {
     type: String,
     required: true,
     unique:true
   },
+  passwordHash: {
+    type: String,
+    required:true,
+    ref: 'password_hash'
+  },
   campaigns: [{
-    type: Schema.Types.ObjectId,
+    type: Schema.Types.ObjectId.get,
+    required: true,
     ref: 'campaigns'
   }],
   entries: [{
   type: Schema.Types.ObjectId,
+  require: true,
   ref: 'entries'
 }]
 }, { timestamps: true })
