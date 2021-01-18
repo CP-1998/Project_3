@@ -11,7 +11,7 @@ function App() {
     <body>
       <Box id="signInCard" color='primary'>
         <img alt="logo placeholder" id="logoSignIn" src={'https://www.goomlandscapes.co.nz/wp-content/uploads/2018/08/logo-placeholder.png'}></img>
-        <Button id="xBtn" variant="outlined" color="primary">X</Button>
+        <Button id="xBtn" href="/" variant="outlined" color="primary">X</Button>
         <hr></hr>
         <TextField label="Enter your email" />
         <br></br>
