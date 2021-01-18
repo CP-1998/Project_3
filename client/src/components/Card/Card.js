@@ -23,7 +23,7 @@ const useStyles = makeStyles({
   },
 })
 
-const simpleCard = () => {
+const SimpleCard = () => {
   const classes = useStyles();
   const bull = <span className={classes.bullet}>•</span>;
 
@@ -53,4 +53,4 @@ const simpleCard = () => {
 }
 
 
-export default simpleCard 
+export default SimpleCard 

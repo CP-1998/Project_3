@@ -1,28 +1,24 @@
-import React from 'react'
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-import { useState, useEffect } from 'react'
-import Navbar from './components/Navbar'
-import Card from './components/Card'
-import Login from './pages/Login/Login'
-import Home from './pages/Home'
+import React from 'react';
+import './App.css';
+import Navbar from './components/Navbar';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Profile from './pages/Profile';
+import myCampaigns from './pages/Campaigns';
+import myEntries from './pages/Entries';
 
-
-const App = () => {
+function App() {
   return (
-    <Router>
-      <div>
+    <>
+      <Router>
         <Navbar />
         <Switch>
-          <Route exact path='/login'>
-            <Login />
-          </Route>
-          <Route path='/'>
-            <Home />
-          </Route>
+          <Route path='/' exact component={Profile} />
+          <Route path='/myCampaigns' component={myCampaigns} />
+          <Route path='/myEntries' component={myEntries} />
         </Switch>
-      </div>
-    </Router>
-  )
+      </Router>
+    </>
+  );
 }
 
-export default App
+export default App;
