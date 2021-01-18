@@ -1,13 +1,15 @@
-import { createContext } from 'react'
-import Campaign from '../../../../models/Campaign'
+// import { createContext } from 'react'
+// import Campaign from '../../../../models/Campaign'
 
-const CampaignContext = createContext({
-  campaign: '',
-  campaign: [],
-  handleInputChange: () => { },
-  handleAddCampaign: () => { },
-  handleUpdateCampaign: () => { },
-  handleDeleteCampaign: () => { }
-})
+// const CampaignContext = createContext({
+//   campaign: '',
+//   campaign: [],
+//   handleInputChange: () => { },
+//   handleAddCampaign: () => { },
+//   handleUpdateCampaign: () => { },
+//   handleDeleteCampaign: () => { }
+// })
 
-export default CampaignContext
+// export default CampaignContext
+
+// needs to be reviewed - might delete
