@@ -1,12 +1,13 @@
 import './signup.css'
 import React from 'react'
 import { Box, TextField, Button, Link } from '@material-ui/core'
+import logo from '../../images/logo.svg'
 
 const SignUp = () => {
   return (
     <body>
       <Box id="signUpCard" color='primary'>
-        <img alt="logo placeholder" id="logoSignIn" src={'https://www.goomlandscapes.co.nz/wp-content/uploads/2018/08/logo-placeholder.png'}></img>
+        <img alt="logo placeholder" id="logoSignIn" src={logo}></img>
         <Button id="xBtn" href="/" variant="outlined" color="primary">X</Button>
         <hr></hr>
         <TextField type="name" id="firstName" label="First Name" />

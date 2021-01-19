@@ -3,6 +3,7 @@ import Box from '@material-ui/core/Box';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import Link from '@material-ui/core/Link'
+import logo from '../../images/logo.svg'
 
 
 
@@ -10,7 +11,7 @@ function App() {
   return (
     <body>
       <Box id="signInCard" color='primary'>
-        <img alt="logo placeholder" id="logoSignIn" src={'https://www.goomlandscapes.co.nz/wp-content/uploads/2018/08/logo-placeholder.png'}></img>
+        <img alt="sorteo" id="logoSignIn" src={logo}></img>
         <Button id="xBtn" href="/" variant="outlined" color="primary">X</Button>
         <hr></hr>
         <TextField label="Enter your email" />
