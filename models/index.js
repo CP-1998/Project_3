@@ -1,3 +1,5 @@
 module.exports = {
-  // your models here...
+  User: require('./User'),
+  Campaign: require('./Campaign'),
+  Entry: require('./Entry')
 }

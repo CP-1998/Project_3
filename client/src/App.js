@@ -1,7 +1,24 @@
-const App = () => {
+import React from 'react';
+import './App.css';
+import Navbar from './components/Navbar';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Profile from './pages/Profile';
+import myCampaigns from './pages/Campaigns';
+import myEntries from './pages/Entries';
+
+function App() {
   return (
-    <h1>Hello World!</h1>
-  )
+    <>
+      <Router>
+        <Navbar />
+        <Switch>
+          <Route path='/' exact component={Profile} />
+          <Route path='/myCampaigns' component={myCampaigns} />
+          <Route path='/myEntries' component={myEntries} />
+        </Switch>
+      </Router>
+    </>
+  );
 }
 
-export default App
+export default App;
